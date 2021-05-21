@@ -35,7 +35,7 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         patch -p1 < "${GITHUB_WORKSPACE}/patches/1806-modify_for_r2s.patch"
-        bash .${GITHUB_WORKSPACE}/patches/additional_patch.sh
+        bash ${GITHUB_WORKSPACE}/patches/additional_patch.sh
     - name: Build ImmortalWrt-18.06
       run: |
         cd "/home/runner/immortalwrt"
@@ -111,7 +111,7 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         patch -p1 < "${GITHUB_WORKSPACE}/patches/snapshot-modify_for_r2s.patch"
-        bash .${GITHUB_WORKSPACE}/patches/additional_patch.sh
+        bash ${GITHUB_WORKSPACE}/patches/additional_patch.sh
     - name: Build ImmortalWrt-Snapshot
       run: |
         cd /home/runner/immortalwrt
