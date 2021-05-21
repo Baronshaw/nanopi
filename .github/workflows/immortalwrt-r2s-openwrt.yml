@@ -56,10 +56,10 @@ jobs:
     - name: Send notification via serverchan
       if: failure()
       run: |
-        curl https://sctapi.ftqq.com/SCT26999TRKZl6FbqVksYloyw6a6bLWfx.send?TEXT='R2S_18.06固件编译出错！'
+        curl https://sctapi.ftqq.com/SCT26999TRKZl6FbqVksYloyw6a6bLWfx.send?title='R2S固件编译通知'&text='R2S_18.06固件编译出错！'
     - name: Send notification
       run: |
-        curl https://sctapi.ftqq.com/SCT26999TRKZl6FbqVksYloyw6a6bLWfx.send?TEXT='R2S_18.06固件编译完成！'
+        curl https://sctapi.ftqq.com/SCT26999TRKZl6FbqVksYloyw6a6bLWfx.send?title='R2S固件编译通知'&text='R2S_18.06固件编译完成！'
     - name: Upload ImmortalWrt-18.06 SHA256SUM Hash
       uses: actions/upload-artifact@v2
       with:
@@ -132,10 +132,10 @@ jobs:
     - name: Send notification via serverchan
       if: failure()
       run: |
-        curl https://sctapi.ftqq.com/SCT26999TRKZl6FbqVksYloyw6a6bLWfx.send?TEXT='R2S_Snapshot固件编译出错！'
+        curl https://sctapi.ftqq.com/SCT26999TRKZl6FbqVksYloyw6a6bLWfx.send?title='R2S固件编译通知'&text='R2S_Snapshot固件编译出错！'
     - name: Send notification
       run: |
-        curl https://sctapi.ftqq.com/SCT26999TRKZl6FbqVksYloyw6a6bLWfx.send?TEXT='R2S_Snapshot固件编译完成！'
+        curl https://sctapi.ftqq.com/SCT26999TRKZl6FbqVksYloyw6a6bLWfx.send?title='R2S固件编译通知'&text='R2S_Snapshot固件编译完成！'
     - name: Upload ImmortalWrt-Snapshot SHA256SUM Hash
       uses: actions/upload-artifact@v2
       with:
