@@ -158,7 +158,7 @@ jobs:
         zip -j "immortalwrt-snapshot-rockchip-armv8-friendlyarm_nanopi-r2s-sysupgrade.zip" "immortalwrt-snapshot-rockchip-armv8-friendlyarm_nanopi-r2s-ext4-sysupgrade.img.gz" "immortalwrt-snapshot-rockchip-armv8-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz" "immortalwrt-snapshot-sha256sums"
         ${GITHUB_WORKSPACE}/scripts/upload_firmware.py  --device-name "FriendlyARM NanoPi R2S" --device-file "rockchip-armv8-friendlyarm_nanopi-r2s" --immortalwrt-version "snapshot" --kernel-version "5.4" --api-id "${{ secrets.TELEGRAM_API_ID }}" --api-hash "${{ secrets.TELEGRAM_API_HASH }}" --bot-token "${{ secrets.TELEGRAM_BOT_TOKEN }}" || exit 0
   Cleanup-Old-Artifacts:
-    needs: [ImmortalWrt-18_06,ImmortalWrt-19_07,ImmortalWrt-Snapshot]
+    needs: [ImmortalWrt-18_06,ImmortalWrt-Snapshot]
     runs-on: ubuntu-18.04
     steps:
     - name: Cleanup Old Action Artifacts
